@@ -3,11 +3,12 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: If we reveal a naked twins inside a given unit we remove numbers that belong to the pair from all boxes of the unit
+except the boxes that contain the twins themselves. It's a direct implementation of constraint propagation strategy.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: Since constraint propagation was already implemented for row, column and square units inside reduce_puzzle() function, I just added two diagonal units to peers dictionary. So constraint propagation was implemented 'automatically' in the same manner as for already solved problem for other unit types.
 
 ### Install
 
