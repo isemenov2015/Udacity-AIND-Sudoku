@@ -104,6 +104,12 @@ def display(values):
     return
 
 def eliminate(values):
+    """
+    For all boxes that contain exactly one value drops this value from all
+    its peers
+    Input: A sudoku in dictionary form
+    Output: The resulting sudoku in dictionary form
+    """
     solved_values = [box for box in values.keys() if len(values[box]) == 1]
     for box in solved_values:
         digit = values[box]
@@ -113,6 +119,12 @@ def eliminate(values):
     return values
 
 def only_choice(values):
+    """
+    Implements 'only choice' strategy, where box is assigned with only possible
+    value from multiple choices for a given unit configuration
+    Input: A sudoku in dictionary form
+    Output: The resulting sudoku in dictionary form
+    """
     for unit in unitlist:
         for digit in '123456789':
             dplaces = [box for box in unit if digit in values[box]]
